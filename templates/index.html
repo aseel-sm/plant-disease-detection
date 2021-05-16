@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Plant Disease Detection</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </head>
+  <body>
+    <div class="container py-3">
+      <nav class="navbar navbar-primary bg-primary rounded-lg">
+        <div class="container">
+          <a class="navbar-brand float-right text-white" href="#"
+            >Plant Disease Detection</a
+          >
+        </div>
+      </nav>
+      <div class="py-3 px-2 m-3 border border-primary d-flex">
+        <form id="upload-form" method="post" enctype="multipart/form-data">
+          <input
+            type="file"
+            name="image"
+            id="image-input"
+            class="form-control-file"
+            accept=".png, .jpg, .jpeg"
+          />
+        </form>
+        <button id="predict-btn" class="btn btn-success" type="button">
+          Check
+        </button>
+        <button id="new-btn" class="btn btn-success" type="button">New</button>
+      </div>
+
+      <!-- prediction and  -->
+      <div class="d-flex p-3 flex-wrap">
+        <img
+          id="imageWidget"
+          class="img-responsive border"
+          src="#"
+          style="width: 300px; height: 300px"
+        />
+        <div
+          class="p-2 border mx-2"
+          style="width: 600px"
+          id="prediction-widget"
+        >
+          <div id="loading">
+            <center>
+              <div class="spinner-grow spinner-grow-sm text-success"></div>
+              <div class="spinner-grow spinner-grow-sm text-info"></div>
+              <div class="spinner-grow spinner-grow-sm text-success"></div>
+              <div class="spinner-grow spinner-grow-sm text-info"></div>
+              <div class="spinner-grow spinner-grow-sm text-success"></div>
+              <div class="spinner-grow spinner-grow-sm text-info"></div>
+              <div class="spinner-grow spinner-grow-sm text-success"></div>
+              <div class="spinner-grow spinner-grow-sm text-info"></div>
+              <div class="spinner-grow spinner-grow-sm text-success"></div>
+              <div class="spinner-grow spinner-grow-sm text-info"></div>
+              <div class="spinner-grow spinner-grow-sm text-success"></div>
+              <div class="spinner-grow spinner-grow-sm text-info"></div>
+              <div class="spinner-grow spinner-grow-sm text-success"></div>
+              <div class="spinner-grow spinner-grow-sm text-info"></div>
+            </center>
+          </div>
+          <div
+            id="prediction-container"
+            class="px-2 bg-success py-1 rounded text-white"
+            style="width: fit-content"
+          >
+            <h4>Prediction:</h4>
+          </div>
+          <div>
+            <ul id="remedy-list" class="list-group list-group-flush"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
